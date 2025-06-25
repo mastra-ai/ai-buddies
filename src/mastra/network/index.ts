@@ -1,7 +1,9 @@
 import { openai } from "@ai-sdk/openai";
 import { NewAgentNetwork } from "@mastra/core/network/vNext";
-import { ghibliFilmsBuddy, gitBuddy, hackerNewsBuddy, storyBuddy } from "../agents/buddies";
+import { ghibliFilmsBuddy, gitBuddy, hackerNewsBuddy, planningBuddy, storyBuddy } from "../agents/buddies";
 import { activityPlanner } from "../workflows/activity-planner";
+import { Memory } from "@mastra/memory";
+import { LibSQLStore } from "@mastra/libsql";
 
 export const vnextNetwork = new NewAgentNetwork({
     id: "vnextNetwork",
@@ -14,9 +16,14 @@ export const vnextNetwork = new NewAgentNetwork({
         gitBuddy,
         hackerNewsBuddy,
         ghibliFilmsBuddy,
-        storyBuddy,
+        storyBuddy
     },
     workflows: {
         activityPlanner,
-    }
+    },
+    memory: new Memory({
+        storage: new LibSQLStore({
+            url: "file:../../mastra.db",
+        }),
+    }),
 })

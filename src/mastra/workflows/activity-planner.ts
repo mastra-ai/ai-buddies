@@ -20,7 +20,7 @@ const planActivities = createStep({
 
         let activitiesText = ''
 
-        const agent = mastra.getAgent('planningAgent')
+        const agent = mastra.getAgent('planningBuddy')
 
         const res = await agent.generate(prompt)
 
@@ -46,7 +46,7 @@ const planIndoorActivities = createStep({
 
         const prompt = `In case it rains, plan indoor activities for ${city} on ${forecast.date}`
 
-        const agent = mastra.getAgent('planningAgent')
+        const agent = mastra.getAgent('planningBuddy')
 
         const res = await agent.generate(prompt)
 
