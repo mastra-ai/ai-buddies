@@ -4,6 +4,8 @@ import { Memory } from '@mastra/memory';
 import { mcpTools, mcpToolsets } from '../tools/mcp';
 import { ghibliCharacters, ghibliFilms } from '../tools/ghibli-films';
 import { storySearch } from '../tools/story-search';
+import { createAnswerRelevancyScorer } from '@mastra/evals/scorers/llm';
+import { createCompletenessScorer } from '@mastra/evals/scorers/code';
 
 const { github_search_repositories } = mcpTools;
 
@@ -34,8 +36,8 @@ export const hackerNewsBuddy = new Agent({
   memory,
 });
 
-export const ghibliFilmsBuddy = new Agent({
-  name: 'Ghibli Films Buddy',
+export const ghibliFilmsBuddyWithScorers = new Agent({
+  name: 'Ghibli Films Buddy with Scorers',
   description: 'Ghibli Films Agent, use for querying Ghibli Films',
   instructions: `
       You are my Ghibli Films assistant. I will ask you questions you must retrieve from Ghibli Films.
@@ -43,6 +45,14 @@ export const ghibliFilmsBuddy = new Agent({
   model: openai('gpt-4o-mini'),
   tools: { ghibliFilms, ghibliCharacters },
   memory,
+  scorers: {
+    answerRelevancy: {
+      scorer: createAnswerRelevancyScorer({ model: openai('gpt-4o-mini') }),
+    },
+    codeScorer: {
+      scorer: createCompletenessScorer()
+    }
+  }
 });
 
 

@@ -2,7 +2,7 @@
 import { Mastra } from '@mastra/core/mastra';
 import { PinoLogger } from '@mastra/loggers';
 import { LibSQLStore, LibSQLVector } from '@mastra/libsql';
-import { ghibliFilmsBuddy, gitBuddy, hackerNewsBuddy, planningBuddy, storyBuddy } from './agents/buddies';
+import { ghibliFilmsBuddyWithScorers, gitBuddy, hackerNewsBuddy, planningBuddy, storyBuddy } from './agents/buddies';
 import { storyEmbedder } from './workflows/story-embedder';
 import { docsServer } from './mcp/docs-server';
 import { activityPlanner } from './workflows/activity-planner';
@@ -21,7 +21,7 @@ export const mastra = new Mastra({
     vnextNetwork
   },
   workflows: { storyEmbedder, activityPlanner },
-  agents: { gitBuddy, hackerNewsBuddy, ghibliFilmsBuddy, storyBuddy, planningBuddy },
+  agents: { gitBuddy, hackerNewsBuddy, ghibliFilmsBuddyWithScorers, storyBuddy, planningBuddy },
   storage,
   vectors: {
     libsql: vectorStore,
