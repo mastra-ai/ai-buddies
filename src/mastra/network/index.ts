@@ -1,11 +1,11 @@
 import { openai } from "@ai-sdk/openai";
-import { NewAgentNetwork } from "@mastra/core/network/vNext";
-import { ghibliFilmsBuddyWithScorers, gitBuddy, hackerNewsBuddy, planningBuddy, storyBuddy } from "../agents/buddies";
+import { ghibliFilmsBuddyWithScorers, gitBuddy, hackerNewsBuddy, storyBuddy } from "../agents/buddies";
 import { activityPlanner } from "../workflows/activity-planner";
 import { Memory } from "@mastra/memory";
 import { LibSQLStore } from "@mastra/libsql";
+import { Agent } from "@mastra/core/agent";
 
-export const vnextNetwork = new NewAgentNetwork({
+export const vnextNetwork = new Agent({
     id: "vnextNetwork",
     instructions: `
     You are a network of helpful agents that can answer questions and help with tasks.

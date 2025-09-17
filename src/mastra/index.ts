@@ -17,11 +17,8 @@ const storage = new LibSQLStore({
 });
 
 export const mastra = new Mastra({
-  vnext_networks: {
-    vnextNetwork
-  },
   workflows: { storyEmbedder, activityPlanner },
-  agents: { gitBuddy, hackerNewsBuddy, ghibliFilmsBuddyWithScorers, storyBuddy, planningBuddy },
+  agents: { gitBuddy, hackerNewsBuddy, ghibliFilmsBuddyWithScorers, storyBuddy, planningBuddy, vnextNetwork },
   storage,
   vectors: {
     libsql: vectorStore,
