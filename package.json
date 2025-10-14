@@ -25,7 +25,7 @@
     "@mastra/mcp": "alpha",
     "@mastra/memory": "alpha",
     "@mastra/rag": "alpha",
-    "ai": "^5.0.45",
+    "ai": "latest",
     "zod": "^4.1.9"
   },
   "devDependencies": {
