@@ -11,6 +11,7 @@ import { storyEmbedder } from './workflows/story-embedder';
 import { docsServer } from './mcp/docs-server';
 import { activityPlanner } from './workflows/activity-planner';
 import { agentManager } from './agents/multiagent';
+import { weatherAgent } from './agents/weather';
 
 const vectorStore = new LibSQLVector({
   connectionUrl: "file:../../mastra.db",
@@ -28,7 +29,8 @@ export const mastra = new Mastra({
     ghibliFanatic,
     planningBuddy,
     storyBase,
-    agentManager
+    agentManager,
+    weatherAgent
   },
   storage,
   vectors: {
