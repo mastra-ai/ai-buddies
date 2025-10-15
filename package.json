@@ -18,19 +18,19 @@
   },
   "dependencies": {
     "@ai-sdk/openai": "^2.0.32",
-    "@mastra/core": "alpha",
-    "@mastra/evals": "alpha",
-    "@mastra/libsql": "alpha",
-    "@mastra/loggers": "alpha",
-    "@mastra/mcp": "alpha",
-    "@mastra/memory": "alpha",
-    "@mastra/rag": "alpha",
+    "@mastra/core": "latest",
+    "@mastra/evals": "latest",
+    "@mastra/libsql": "latest",
+    "@mastra/loggers": "latest",
+    "@mastra/mcp": "latest",
+    "@mastra/memory": "latest",
+    "@mastra/rag": "latest",
     "ai": "latest",
     "zod": "^4.1.9"
   },
   "devDependencies": {
     "@types/node": "^24.0.4",
-    "mastra": "alpha",
+    "mastra": "latest",
     "typescript": "^5.8.3"
   }
 }

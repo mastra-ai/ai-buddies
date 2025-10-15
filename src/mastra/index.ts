@@ -32,6 +32,9 @@ export const mastra = new Mastra({
     agentManager,
     weatherAgent
   },
+  bundler: {
+    externals: ['pkce-challenge'],
+  },
   storage,
   vectors: {
     libsql: vectorStore,
