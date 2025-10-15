@@ -13,7 +13,9 @@ async function getFilmByUrl(id: string) {
 export const ghibliFilms = createTool({
     id: 'ghibli-films',
     description: 'Get information about Ghibli films',
-    inputSchema: z.object({}),
+    inputSchema: z.object({
+        context: z.string(),
+    }),
     execute: async () => {
         const response = await fetch(`https://ghibliapi.vercel.app/films`, {
             headers: {
@@ -33,7 +35,9 @@ export const ghibliFilms = createTool({
 export const ghibliCharacters = createTool({
     id: 'ghibli-characters',
     description: 'Get information about Ghibli characters',
-    inputSchema: z.object({}),
+    inputSchema: z.object({
+        context: z.string(),
+    }),
     execute: async () => {
         const response = await fetch(`https://ghibliapi.vercel.app/people`, {
             headers: {

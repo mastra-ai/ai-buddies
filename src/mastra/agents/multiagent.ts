@@ -1,22 +1,25 @@
 import { openai } from "@ai-sdk/openai";
-import { NewAgentNetwork } from "@mastra/core/network/vNext";
-import { ghibliFilmsBuddyWithScorers, gitBuddy, hackerNewsBuddy, planningBuddy, storyBuddy } from "../agents/buddies";
+import { ghibliFanatic } from "./ghibli";
+import { gitBuddy } from "./git";
+import { hackerNewsResearcher } from "./hacker-news";
+import { storyBase } from "./storybase";
 import { activityPlanner } from "../workflows/activity-planner";
 import { Memory } from "@mastra/memory";
 import { LibSQLStore } from "@mastra/libsql";
+import { Agent } from "@mastra/core/agent";
 
-export const vnextNetwork = new NewAgentNetwork({
-    id: "vnextNetwork",
+export const agentManager = new Agent({
+    id: "agentManager",
     instructions: `
     You are a network of helpful agents that can answer questions and help with tasks.
     `,
-    name: "vnextNetwork",
+    name: "agentManager",
     model: openai('gpt-4o-mini'),
     agents: {
         gitBuddy,
-        hackerNewsBuddy,
-        ghibliFilmsBuddyWithScorers,
-        storyBuddy
+        hackerNewsResearcher,
+        ghibliFanatic,
+        storyBase
     },
     workflows: {
         activityPlanner,
