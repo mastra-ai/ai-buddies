@@ -36,6 +36,9 @@ export const mastra = new Mastra({
   vectors: {
     libsql: vectorStore,
   },
+  bundler: {
+    externals: ['pkce-challenge'],
+  },
   mcpServers: {
     docsServer,
   },
