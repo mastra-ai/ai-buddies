@@ -17,7 +17,7 @@
     "node": ">=20.9.0"
   },
   "dependencies": {
-    "@ai-sdk/openai": "^2.0.32",
+    "@ai-sdk/openai": "^2.0.62",
     "@mastra/core": "alpha",
     "@mastra/evals": "alpha",
     "@mastra/libsql": "alpha",
@@ -29,7 +29,7 @@
     "zod": "^4.1.9"
   },
   "devDependencies": {
-    "@types/node": "^24.0.4",
+    "@types/node": "^24.10.0",
     "mastra": "alpha",
     "typescript": "^5.8.3"
   }
