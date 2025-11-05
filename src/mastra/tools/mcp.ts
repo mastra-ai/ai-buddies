@@ -17,6 +17,6 @@ const mcp = new MCPClient({
     }
 });
 
-export const mcpTools = await mcp.getTools();
+export const mcpTools = await mcp.listTools();
 
-export const mcpToolsets = await mcp.getToolsets();
+export const mcpToolsets = await mcp.listToolsets();

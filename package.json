@@ -18,19 +18,20 @@
   },
   "dependencies": {
     "@ai-sdk/openai": "latest",
-    "@mastra/core": "latest",
-    "@mastra/evals": "latest",
-    "@mastra/libsql": "latest",
-    "@mastra/loggers": "latest",
-    "@mastra/mcp": "latest",
-    "@mastra/memory": "latest",
-    "@mastra/rag": "latest",
+    "@mastra/core": "0.0.0-main-test-20251105183450",
+    "@mastra/evals": "0.0.0-main-test-20251105183450",
+    "@mastra/libsql": "0.0.0-main-test-20251105183450",
+    "@mastra/loggers": "0.0.0-main-test-20251105183450",
+    "@mastra/mcp": "0.0.0-main-test-20251105183450",
+    "@mastra/memory": "0.0.0-main-test-20251105183450",
+    "@mastra/rag": "0.0.0-main-test-20251105183450",
+    "@mastra/observability": "0.0.0-main-test-20251105183450",
     "ai": "latest",
     "zod": "^4.1.9"
   },
   "devDependencies": {
     "@types/node": "^24.10.0",
-    "mastra": "latest",
+    "mastra": "0.0.0-main-test-20251105183450",
     "typescript": "^5.8.3"
   }
 }

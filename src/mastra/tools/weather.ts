@@ -83,8 +83,8 @@ export const weatherTool = createTool({
         city: z.string().describe('The city to get the weather for'),
     }),
     outputSchema: forecastSchema,
-    execute: async ({ context }) => {
-        const { latitude, longitude } = await geocode(context.city)
+    execute: async ({ city }) => {
+        const { latitude, longitude } = await geocode(city)
         return await getForecast(latitude, longitude)
     }
 })

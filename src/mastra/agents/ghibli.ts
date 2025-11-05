@@ -1,8 +1,8 @@
 import { Agent } from "@mastra/core/agent";
 import { ghibliFilms, ghibliCharacters } from "../tools/ghibli-films";
 import { Memory } from "@mastra/memory";
-import { createAnswerRelevancyScorer } from "@mastra/evals/scorers/llm";
-import { createCompletenessScorer } from "@mastra/evals/scorers/code";
+import { createAnswerRelevancyScorer } from "@mastra/evals/scorers/prebuilt";
+import { createCompletenessScorer } from "@mastra/evals/scorers/prebuilt";
 
 const memory = new Memory();
 

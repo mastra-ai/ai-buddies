@@ -10,6 +10,7 @@ import { planningBuddy } from './agents/planner';
 import { storyEmbedder } from './workflows/story-embedder';
 import { docsServer } from './mcp/docs-server';
 import { activityPlanner } from './workflows/activity-planner';
+import { Observability } from '@mastra/observability';
 import { agentManager } from './agents/multiagent';
 import { weatherAgent } from './agents/weather';
 import { websearchAgent } from './agents/websearch';
@@ -44,14 +45,10 @@ export const mastra = new Mastra({
   mcpServers: {
     docsServer,
   },
-  telemetry: {
-    enabled: false,
-  },
-  observability: {
-    default: {
-      enabled: true,
-    },
-  },
+  observability: new Observability({
+    // Enables DefaultExporter and CloudExporter for tracing
+    default: { enabled: true },
+    }),
   logger: new PinoLogger({
     name: 'Mastra',
     level: 'info',
