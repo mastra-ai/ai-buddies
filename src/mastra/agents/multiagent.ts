@@ -1,4 +1,3 @@
-import { openai } from "@ai-sdk/openai";
 import { ghibliFanatic } from "./ghibli";
 import { gitBuddy } from "./git";
 import { hackerNewsResearcher } from "./hacker-news";
@@ -13,8 +12,8 @@ export const agentManager = new Agent({
     instructions: `
     You are a network of helpful agents that can answer questions and help with tasks.
     `,
-    name: "agentManager",
-    model: openai('gpt-4o-mini'),
+    name: "Agent Manager",
+    model: 'openai/gpt-4o-mini',
     agents: {
         gitBuddy,
         hackerNewsResearcher,

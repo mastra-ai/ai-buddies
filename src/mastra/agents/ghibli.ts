@@ -1,5 +1,4 @@
 import { Agent } from "@mastra/core/agent";
-import { openai } from "@ai-sdk/openai";
 import { ghibliFilms, ghibliCharacters } from "../tools/ghibli-films";
 import { Memory } from "@mastra/memory";
 import { createAnswerRelevancyScorer } from "@mastra/evals/scorers/llm";
@@ -18,7 +17,7 @@ export const ghibliFanatic = new Agent({
     memory,
     scorers: {
         answerRelevancy: {
-            scorer: createAnswerRelevancyScorer({ model: openai('gpt-4o-mini') }),
+            scorer: createAnswerRelevancyScorer({ model: 'openai/gpt-4o-mini' }),
         },
         codeScorer: {
             scorer: createCompletenessScorer()

@@ -1,7 +1,6 @@
-import { openai } from "@ai-sdk/openai";
 import { Agent } from "@mastra/core/agent";
-import { mcpTools } from "../tools/mcp";
 import { Memory } from "@mastra/memory";
+import { mcpTools } from "../tools/mcp";
 
 const { github_search_repositories } = mcpTools;
 const memory = new Memory();
@@ -13,7 +12,7 @@ export const gitBuddy = new Agent({
         You are my GitHub assistant. I will give you GitHub repositories and you will help
         answer any questions I have about the repository.
       `,
-    model: openai('gpt-4o-mini'),
+    model: 'openai/gpt-4o-mini',
     memory,
     tools: {
         github_search_repositories,
