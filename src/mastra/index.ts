@@ -12,6 +12,7 @@ import { docsServer } from './mcp/docs-server';
 import { activityPlanner } from './workflows/activity-planner';
 import { agentManager } from './agents/multiagent';
 import { weatherAgent } from './agents/weather';
+import { websearchAgent } from './agents/websearch';
 
 const vectorStore = new LibSQLVector({
   connectionUrl: "file:../../mastra.db",
@@ -30,7 +31,8 @@ export const mastra = new Mastra({
     planningBuddy,
     storyBase,
     agentManager,
-    weatherAgent
+    weatherAgent,
+    websearchAgent
   },
   storage,
   vectors: {

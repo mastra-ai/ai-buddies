@@ -1,6 +1,7 @@
 import { createTool } from "@mastra/core/tools";
 import { MCPServer } from "@mastra/mcp";
 import { z } from "zod";
+import { ghibliFanatic } from "../agents/ghibli";
 
 export const docsServer = new MCPServer({
     name: "docs-server",
@@ -120,5 +121,8 @@ export const docsServer = new MCPServer({
                 `
             }
         })
+    },
+    agents: {
+        ghibliFanatic,
     }
 })

@@ -1,5 +1,5 @@
 {
-  "name": "arize-conference",
+  "name": "AI Buddies",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -17,20 +17,20 @@
     "node": ">=20.9.0"
   },
   "dependencies": {
-    "@ai-sdk/openai": "^2.0.62",
-    "@mastra/core": "alpha",
-    "@mastra/evals": "alpha",
-    "@mastra/libsql": "alpha",
-    "@mastra/loggers": "alpha",
-    "@mastra/mcp": "alpha",
-    "@mastra/memory": "alpha",
-    "@mastra/rag": "alpha",
+    "@ai-sdk/openai": "latest",
+    "@mastra/core": "latest",
+    "@mastra/evals": "latest",
+    "@mastra/libsql": "latest",
+    "@mastra/loggers": "latest",
+    "@mastra/mcp": "latest",
+    "@mastra/memory": "latest",
+    "@mastra/rag": "latest",
     "ai": "latest",
     "zod": "^4.1.9"
   },
   "devDependencies": {
     "@types/node": "^24.10.0",
-    "mastra": "alpha",
+    "mastra": "latest",
     "typescript": "^5.8.3"
   }
 }
