@@ -40,7 +40,7 @@ const planIndoorActivities = createStep({
         activities: z.string(),
     }),
     execute: async ({ getInitData, inputData, mastra }) => {
-        const { city } = getInitData()
+        const { city } = getInitData<typeof activityPlanner>()
         console.log('planIndoorActivities')
         const forecast = inputData
 

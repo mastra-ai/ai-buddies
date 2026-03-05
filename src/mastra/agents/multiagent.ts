@@ -13,7 +13,7 @@ export const agentManager = new Agent({
     You are a network of helpful agents that can answer questions and help with tasks.
     `,
     name: "Agent Manager",
-    model: 'openai/gpt-4o-mini',
+    model: 'openai/gpt-5-mini',
     agents: {
         gitBuddy,
         hackerNewsResearcher,
@@ -25,6 +25,7 @@ export const agentManager = new Agent({
     },
     memory: new Memory({
         storage: new LibSQLStore({
+            id: "libsql-multiagent",
             url: "file:../../mastra.db",
         }),
     }),

@@ -15,10 +15,12 @@ import { weatherAgent } from './agents/weather';
 import { websearchAgent } from './agents/websearch';
 
 const vectorStore = new LibSQLVector({
-  connectionUrl: "file:../../mastra.db",
+  id: "libsql-vector",
+  url: "file:../../mastra.db",
 });
 
 const storage = new LibSQLStore({
+  id: "libsql-storage",
   url: "file:../../mastra.db",
 });
 
@@ -44,14 +46,7 @@ export const mastra = new Mastra({
   mcpServers: {
     docsServer,
   },
-  telemetry: {
-    enabled: false,
-  },
-  observability: {
-    default: {
-      enabled: true,
-    },
-  },
+
   logger: new PinoLogger({
     name: 'Mastra',
     level: 'info',
