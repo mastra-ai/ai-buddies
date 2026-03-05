@@ -6,13 +6,14 @@ const { github_search_repositories } = mcpTools;
 const memory = new Memory();
 
 export const gitBuddy = new Agent({
+    id: 'gitBuddy',
     name: 'Git Buddy',
     description: 'GitHub Agent, use for querying github repositories',
     instructions: `
         You are my GitHub assistant. I will give you GitHub repositories and you will help
         answer any questions I have about the repository.
       `,
-    model: 'openai/gpt-4o-mini',
+    model: 'openai/gpt-5-mini',
     memory,
     tools: {
         github_search_repositories,

@@ -1,9 +1,10 @@
 import { Agent } from "@mastra/core/agent";
 
 export const planningBuddy = new Agent({
+    id: 'planningBuddy',
     name: 'Planning Buddy',
     description: 'Planning Agent, use for planning activities and travel',
-    model: 'openai/gpt-4o',
+    model: 'openai/gpt-5.2',
     instructions: `
           You are a local activities and travel expert who excels at weather-based planning. Analyze the weather data and provide practical activity recommendations.
   

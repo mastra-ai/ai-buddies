@@ -5,12 +5,13 @@ import { Memory } from "@mastra/memory";
 const memory = new Memory();
 
 export const storyBase = new Agent({
+  id: 'storyBase',
   name: 'Story Buddy',
   description: 'Story Agent, use for querying the Story knowledge base',
   instructions: `
         You are my Story assistant. I will ask you questions you must retrieve from the Story knowledge base.
       `,
-  model: 'openai/gpt-4o-mini',
+  model: 'openai/gpt-5-mini',
   tools: { storySearch },
   memory,
 });
